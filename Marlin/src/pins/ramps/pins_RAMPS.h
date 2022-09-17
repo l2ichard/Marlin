@@ -142,18 +142,35 @@
 //
 // Steppers
 //
-#define X_STEP_PIN                            54  // (A0)
-#define X_DIR_PIN                             55  // (A1)
-#define X_ENABLE_PIN                          38
-#ifndef X_CS_PIN
-  #define X_CS_PIN                       AUX3_06
-#endif
 
-#define Y_STEP_PIN                            60
-#define Y_DIR_PIN                             61
-#define Y_ENABLE_PIN                          56  // (A2)
-#ifndef Y_CS_PIN
-  #define Y_CS_PIN                       AUX3_02
+#if ENABLED(SWAP_XY)
+  #define X_STEP_PIN                            60
+  #define X_DIR_PIN                             61
+  #define X_ENABLE_PIN                          56  // (A2)
+  #ifndef X_CS_PIN
+    #define X_CS_PIN                       AUX3_02
+  #endif
+
+  #define Y_STEP_PIN                            54  // (A0)
+  #define Y_DIR_PIN                             55  // (A1)
+  #define Y_ENABLE_PIN                          38
+  #ifndef Y_CS_PIN
+    #define Y_CS_PIN                       AUX3_06
+  #endif
+#else
+  #define X_STEP_PIN                            54  // (A0)
+  #define X_DIR_PIN                             55  // (A1)
+  #define X_ENABLE_PIN                          38
+  #ifndef X_CS_PIN
+    #define X_CS_PIN                       AUX3_06
+  #endif
+
+  #define Y_STEP_PIN                            60
+  #define Y_DIR_PIN                             61
+  #define Y_ENABLE_PIN                          56  // (A2)
+  #ifndef Y_CS_PIN
+    #define Y_CS_PIN                       AUX3_02
+  #endif
 #endif
 
 #ifndef Z_STEP_PIN
